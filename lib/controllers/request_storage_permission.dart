@@ -16,7 +16,7 @@ Future<bool> requestStoragePermissions() async {
         await Permission.storage.isPermanentlyDenied) {
       await openAppSettings();
     }
-    return false; // Permission denied
+    return false;
   }
   return true;
 }

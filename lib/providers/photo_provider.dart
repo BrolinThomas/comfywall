@@ -6,11 +6,9 @@ class PhotoProvider extends ChangeNotifier {
   final UnsplashService _service = UnsplashService();
   final List<Photo> _photos = [];
 
-
   int _currentPage = 1;
   bool _isLoading = false;
   List<Photo> get photos => _photos;
-
 
   Future<void> fetchPhotos() async {
     if (_isLoading) return;

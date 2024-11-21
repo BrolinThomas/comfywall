@@ -40,7 +40,7 @@ class _HomepageState extends State<Homepage> {
           padding: const EdgeInsets.all(8.0),
           child: MasonryGridView.builder(
             gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, // Number of columns
+              crossAxisCount: 2,
             ),
             mainAxisSpacing: 8,
             crossAxisSpacing: 16,
@@ -59,9 +59,9 @@ class _HomepageState extends State<Homepage> {
                       child: CachedNetworkImage(
                         imageUrl: photo.thumbnailUrl,
                         placeholder: (context, url) =>
-                        const Center(child: CircularProgressIndicator()),
+                            const Center(child: CircularProgressIndicator()),
                         errorWidget: (context, url, error) =>
-                        const Icon(Icons.error),
+                            const Icon(Icons.error),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -93,15 +93,13 @@ class _HomepageState extends State<Homepage> {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              // Enlarged Image
               InteractiveViewer(
                 maxScale: 5.0,
                 child: CachedNetworkImage(
                   imageUrl: photo.thumbnailUrl,
                   placeholder: (context, url) =>
-                  const Center(child: CircularProgressIndicator()),
-                  errorWidget: (context, url, error) =>
-                  const Icon(Icons.error),
+                      const Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                   fit: BoxFit.contain,
                   width: double.infinity,
                   height: double.infinity,
@@ -121,9 +119,7 @@ class _HomepageState extends State<Homepage> {
                   icon: const Icon(Icons.download),
                   label: const Text('Download'),
                   onPressed: () {
-                    // Close the dialog first
                     Navigator.of(context).pop();
-                    // Then download the image
                     downloadImage(context, photo.fullUrl);
                   },
                 ),
