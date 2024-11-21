@@ -27,7 +27,8 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     final provider = Provider.of<PhotoProvider>(context);
     return Scaffold(
-      appBar: AppBar(title: const Text('Comfywall')),
+      appBar: AppBar(
+          title: const Text('Comfywall')),
       drawer: const MyDrawer(),
       body: NotificationListener<ScrollNotification>(
         onNotification: (ScrollNotification scrollInfo) {
@@ -119,8 +120,8 @@ class _HomepageState extends State<Homepage> {
                   icon: const Icon(Icons.download),
                   label: const Text('Download'),
                   onPressed: () {
-                    Navigator.of(context).pop();
                     downloadImage(context, photo.fullUrl);
+                    Navigator.of(context).pop();
                   },
                 ),
               ),
